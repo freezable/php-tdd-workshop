@@ -15,15 +15,17 @@ final class ChangeMeTest extends TestCase
             'empty string' => ['pass' => '',  'expected' => false],
             '8 chars' => ['pass' => '01234567',  'expected' => false],
             '<8 chars' => ['pass' => '0123456',  'expected' => false],
-            'without UpperCase' => ['pass' => '012345678i',  'expected' => false],
-        ];
+            'without UpperCase | without underscore' => ['pass' => '012345678i',  'expected' => false],
+            'without Lowercase | without underscore' => ['pass' => '012345678I',  'expected' => false],         
+            'no number | without underscore' => ['pass' => 'aBcdefGhi',  'expected' => false],
+            ];
     }
 
 
     static public function validPassordDataProvider(): array
     {
         return [
-            '8+ chars | with UpperCase' => ['pass' => '01234567I',  'expected' => true],
+            '8+ chars | with UpperCase | with LowerCase | with number | with underscore' => ['pass' => '01234_567Ii',  'expected' => true],
         ];
     }
 
