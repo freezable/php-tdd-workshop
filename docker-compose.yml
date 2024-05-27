@@ -1,0 +1,10 @@
+services:
+  php_tdd_workshop:
+    build: .
+    container_name: php_tdd_workshop
+    hostname: php
+    volumes:
+      - .:/srv/php-tdd-workshop:delegated
+    environment:
+      XDEBUG_MODE: debug
+      XDEBUG_SESSION: PHPSTORM
