@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 final class ChangeMeTest extends TestCase
 {
-    public function test_change_me(): void
+    protected function test_change_me(): void
     {
         $changeMe = new ChangeMe();
 
