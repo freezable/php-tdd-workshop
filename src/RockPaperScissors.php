@@ -10,10 +10,21 @@ class  RockPaperScissors {
     public const SCICCORS = 'SCICCORS';
 
     public function play (string $playerOneOption, string $payerTwoOption): string {
-        if($payerTwoOption === self::ROCK){
+        if($playerOneOption === self::SCICCORS && $payerTwoOption === self::ROCK){
             return 'player2 wins';
         }
 
+        if($playerOneOption === self::ROCK && $payerTwoOption === self::PAPER){
+            return 'player2 wins';
+        }
+
+        if($playerOneOption === self::PAPER && $payerTwoOption === self::SCICCORS){
+            return 'player2 wins';
+        }
+
+        if($playerOneOption === $payerTwoOption){
+            return 'both have same';
+        }
 
         return 'player1 wins';
     }
